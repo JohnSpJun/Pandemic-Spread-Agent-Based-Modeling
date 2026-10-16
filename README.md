@@ -6,34 +6,47 @@ The code requires only `numpy` and `matplotlib`. After cloning the repo, install
 pip install -r requirements.txt
 ```
 
-## Discussion Items
-Section A.iv: Sensitivity Analysis
-Q. How much do individual runs differ from the average?
-A. The individual runs overall are similar to the average across the 20 runs. However, when p=0.15 and q=0.04, the individual runs do differ quite visibly. Depending on the random initialization, we would sometimes see the number of recovered people greater than the number of suceptible people and, other times, see the reverse of that. 
-
-Q. In how many runs does the outbreak die out early?
-A. In 4 runs (3, 6, 14, 19), the number of recovered people plateaued below 50, effectively showing that the pandemic infected than 25% of the population. 2 of the 4 runs did not show any increase in the number of recovered people nor the peak in the number of infected individuals, demonstrating that the outbreak potentially did not occur despite the presence of infected individiduals. 
-
-Section B.i: Introduce social distancing measures
-Q. Which parameter controls the maximum number of simultaneously infected agents? Which determines whether the healthcare system is overwhelmed?
-A. It seems that both the reduced movement is the more important factor. The difference between m=1 and 0.01 is greater than the difference between when the agents starts avoiding or not. Healthcare system is overwhelmed when there is a high number of simultaneously infected agents and especially if that number rises too quickly.
-
-Section B.ii: Compare the results with and without social distancing
-Q. The peak number of infected agents
-A. With social distancing(avoidance), there is much less number of peak infected people for the most part. While the number is lower, the gap closes when people begin to move around, presumably as they are around infected people and are unable to "distance" themselves from the infected crowd.
-
-Q. The time to peak, and the time until no infected agents remain
-A. Tito peak without social distancing(avoidance) is not necessarily shorter. This could be due to the fact that with very effective social distancing, the pandemic is effectively prevented, leading to the absence of major peak.
-
-Q. Total number of agents ever infected
-A. The total number of agents ever infected is computed by adding the number of recovered and infected individuals at the last time point. The difference is significant. However, as mentioned above, the gap closes once people begin move around at higher frequency where this leads to a situation where it is impossible to avoid infected people.
-
-Q. The implications for real-world public health interventions
-A. In real-world situations, it is difficult to understand who to avoid exactly. Therefore, it would be important for people to not travel around. There is clearly signs that social distancing in combination with reduced movement leads to the best outcome in terms of ensuring that the peak is low and delayed as well as the total number of infected people are kept low.
-
-Section B.iii: Strength of distancing
-Q. Discuss how stricter or more relaxed distancing affects the epidemic
-A. Stricter distancing is always better. Even though the average time to peak is early when people both avoid infected individuals as well as have reduced movement, the number of infected individuals at the peak is significantly lower. Therefore, the effects of distancing is monotonic - the stricter the better.
+## Discussion
+ 
+### A.iv. Sensitivity Analysis
+ 
+**How much do individual runs differ from the average?**
+ 
+Overall, the individual runs are similar to the average across the 20 runs. With `p=0.15` and `q=0.04`, however, they differ visibly. Depending on the random initialization, some runs end with more recovered than susceptible agents, while others end with the reverse.
+ 
+**In how many runs does the outbreak die out early?**
+ 
+In 4 runs (runs 3, 6, 14, and 19), the number of recovered agents plateaued below 50, meaning the pandemic infected less than 25% of the population. In 2 of these 4 runs, there was no increase in recovered agents and no peak in infected agents, suggesting the outbreak never took off despite the presence of infected agents.
+ 
+### B.i. Introducing Social Distancing Measures
+ 
+**Which parameter controls the maximum number of simultaneously infected agents? Which determines whether the healthcare system is overwhelmed?**
+ 
+Reduced movement (`m`) appears to be the more important factor: the difference between `m=1` and `m=0.01` is greater than the difference between avoidance on and off. The healthcare system is overwhelmed when the number of simultaneously infected agents is high, especially when that number rises quickly.
+ 
+### B.ii. Comparing Results With and Without Social Distancing
+ 
+**Peak number of infected agents**
+ 
+With social distancing (avoidance), the peak number of infected agents is much lower in most settings. The gap narrows as movement increases, presumably because agents are surrounded by infected agents more often and can no longer distance themselves from them.
+ 
+**Time to peak and time until no infected agents remain**
+ 
+The time to peak without social distancing is not necessarily shorter. This may be because very effective social distancing prevents the pandemic altogether, so there is no major peak.
+ 
+**Total number of agents ever infected**
+ 
+The total number of agents ever infected is the sum of recovered and infected agents at the final time step. The difference between the two conditions is significant. However, as noted above, the gap narrows at higher movement rates, where avoiding infected agents becomes impossible.
+ 
+**Implications for real-world public health interventions**
+ 
+In real life, it is difficult to know exactly whom to avoid, so limiting movement is important. The results clearly suggest that combining social distancing with reduced movement leads to the best outcome: a lower and later peak, and fewer total infections.
+ 
+### B.iii. Strength of Distancing
+ 
+**How does stricter or more relaxed distancing affect the epidemic?**
+ 
+Stricter distancing is always better. Although the average time to peak is earlier when agents both avoid infected agents and move less, the peak number of infected agents is significantly lower. The effect of distancing is therefore monotonic: the stricter, the better.
 
 ## Hypotheses Revisited
 
