@@ -77,4 +77,4 @@ Depending on which parameters are included and their values, the simulated curve
 
 ## AI Use Statement
 
-[Describe how AI tools were used, following your course's policy.]
+No generative AI (in any form) has been used to complete the programming part of the homework. I have used Claude Opus 5.5 for formatting of this `README.md`.
