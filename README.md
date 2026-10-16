@@ -1,20 +1,38 @@
-# Pandemic-Spread-Agent-Based-Modeling
-CS500 @ Emory
+## Setup
 
-### Question 2: Agent-Based Modeling of Pandemic Spread
-Name: John S. Jun
-Email: jsjun2@emory.edu
+The code requires only `numpy` and `matplotlib`. After cloning the repo, install them with:
 
-#### Hypothesis Revisited
+```bash
+pip install -r requirements.txt
+```
 
-Agent-based Modeling of Pandemic Spread confirms the following hypotheses:
-* Movement reduction lowers and delays the arrival of the infection peak.
-* Across the simulated runs, we do see different pandemic spread trajectory based on the random initialization at t=0, though are consistent overall.
-* Depending on the number of parameters and their values, the curve may look similar or different to the SIR curve.
+## Results: Hypotheses Revisited
 
-#### Instructions for Running the Code
-This only requires matplotlib and numpy packages. Please use the requirements.txt to install these packages.
+### 1. Movement reduction lowers and delays the infection peak
 
-Upon git cloning this repo, you can run `pip install -r requirements.txt`
+Reducing the movement rate `m` lowers the peak number of infected agents. With avoidance enabled (`avoid=True`) and a low movement rate, the time to peak is short, but the peak itself is very low, meaning the pandemic is effectively prevented.
 
-Statement: No generative AI (in any form) has been used to complete this homework.
+![Average peak infected vs m](figures/average_peak_infected_vs_m.png)
+![Average time to peak vs m](figures/average_time_to_peak_vs_m.png)
+
+### 2. Trajectories vary with random initialization but are consistent on average
+
+With `p=0.15` and `q=0.04`, the average trajectory over all runs looks like this:
+
+![Average trajectory, p=0.15, q=0.04](figures/p0.15_q0.04_average.png)
+
+Individual runs with the same parameters can look very different depending on the random initial positions. In the first run below the pandemic spreads successfully; in the second it dies out early.
+
+![Run 1: successful spread](figures/p0.15_q0.04_version1.png)
+![Run 2: early termination](figures/p0.15_q0.04_version2.png)
+
+### 3. Resemblance to the SIR curve depends on the parameters
+
+Depending on which parameters are included and their values, the simulated curves may or may not resemble the classic SIR curve.
+
+![Deviation from SIR Curve with Social Distancing](figures/p0.3_q0.02_m0.3_avoid.png)
+![Similar to SIR Curve without Social Distancing](figures/p0.3_q0.02_m0.6.png)
+
+## AI Use Statement
+
+[Describe how AI tools were used, following your course's policy.]
